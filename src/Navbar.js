@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { LuUserCircle2 } from "react-icons/lu";
 import {
   Box,
   Flex,
@@ -23,11 +24,11 @@ const Navbar = () => {
 
   const menuItems = [
     { title: "Home", to: "/" },
-    { title: "Properties", to: "/property" },
-    { title: "Design", to: "/design" },
-    { title: "Search", to: "/search" },
-    { title: "About Us", to: "/aboutus" },
-    { title: "Contact Us", to: "/contactus" },
+    { title: "Properties", to: "#" },
+    { title: "Design", to: "#" },
+    { title: "Search", to: "#" },
+    { title: "About Us", to: "#" },
+    { title: "Contact Us", to: "#" },
   ];
 
   return (
@@ -43,8 +44,8 @@ const Navbar = () => {
       zIndex="999"
       bg="transparent"
       color="#10C66F"
-      pl={10}
-      pr={10}
+      pl={5}
+      pr={5}
     >
       <Flex w={isMobile ? "100%" : "50%"} align="center">
         <Image w={100} src={companyLogo} alt="company logo" />
@@ -70,6 +71,7 @@ const Navbar = () => {
                   <Link to={item.to} key={item.to}>
                     <Text
                       fontSize="lg"
+                      fontWeight="bold" // Make the text bold
                       variant="ghost"
                       mr="2"
                       mb="2"
@@ -84,11 +86,12 @@ const Navbar = () => {
           )}
         </>
       ) : (
-        <Flex align="center" justifyContent="space-around" w="90%">
+        <Flex align="center" justifyContent="space-around" w="100%">
           {menuItems.map((item) => (
             <Link to={item.to} key={item.to}>
               <Text
                 fontSize="lg"
+                fontWeight="bold" // Make the text bold
                 variant="ghost"
                 mr="2"
                 _hover={{ color: "#10C66F" }}
@@ -97,10 +100,10 @@ const Navbar = () => {
               </Text>
             </Link>
           ))}
-          <Icon>
-            {" "}
-            <FiUser size="lg" />{" "}
-          </Icon>
+          <LuUserCircle2
+            style={{ height: "10%", width: "1.7rem" }}
+            color="black"
+          />
           <Button
             bg={"#10C66F"}
             color={"white"}
