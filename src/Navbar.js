@@ -68,7 +68,13 @@ const Navbar = () => {
               <Flex direction="column" align="flex-end">
                 {menuItems.map((item) => (
                   <Link to={item.to} key={item.to}>
-                    <Text variant="ghost" mr="2" mb="2" onClick={toggleMenu}>
+                    <Text
+                      fontSize="lg"
+                      variant="ghost"
+                      mr="2"
+                      mb="2"
+                      onClick={toggleMenu}
+                    >
                       {item.title}
                     </Text>
                   </Link>
@@ -81,7 +87,12 @@ const Navbar = () => {
         <Flex align="center" justifyContent="space-around" w="90%">
           {menuItems.map((item) => (
             <Link to={item.to} key={item.to}>
-              <Text variant="ghost" mr="2">
+              <Text
+                fontSize="lg"
+                variant="ghost"
+                mr="2"
+                _hover={{ color: "#10C66F" }}
+              >
                 {item.title}
               </Text>
             </Link>
@@ -90,7 +101,12 @@ const Navbar = () => {
             {" "}
             <FiUser size="lg" />{" "}
           </Icon>
-          <Button bg={"#10C66F"} color={"white"} mr="2">
+          <Button
+            bg={"#10C66F"}
+            color={"white"}
+            mr="2"
+            _hover={{ bg: "#0F9D58" }}
+          >
             Create Listing
           </Button>
         </Flex>
